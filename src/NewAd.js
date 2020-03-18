@@ -54,27 +54,27 @@ export default class Sign extends Component {
     //   }
       
 
-    //   componentDidMount() {
-    //     fetch('https://dooaz.herokuapp.com/api/elanlar/newad',{
-    //         headers: {
-    //             'Content-Type': 'application/x-www-form-urlencoded',
-    //             'Accept': 'application/json'
-    //         },
-    //         method: 'post',
-    //         // body: users 
-    //     }).then(resp => {
-    //         return resp.json()
-    //     }).then(data => {
-    //         console.log(data)
-    //         // console.log(data.cities.map(city =>  city.name))
-    //         // console.log(cat)
-    //             this.setState({
-    //                 categories: data.categories,
-    //                 // img: data.map(inner => { return inner.image_path })
-    //             })
-    //             console.log(this.state.img)
-    //     })
-    // }
+      componentDidMount() {
+        fetch('https://dooaz.herokuapp.com/api/elanlar/newad',{
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Accept': 'application/json'
+            },
+            method: 'post',
+            // body: users 
+        }).then(resp => {
+            return resp.json()
+        }).then(data => {
+            console.log(data)
+            // console.log(data.cities.map(city =>  city.name))
+            // console.log(cat)
+                this.setState({
+                    categories: data.categories,
+                    // img: data.map(inner => { return inner.image_path })
+                })
+                console.log(this.state.img)
+        })
+    }
     render() {
         const category = this.state.categories
         return (
