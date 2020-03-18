@@ -47,33 +47,33 @@ class App extends React.Component {
         let select = document.getElementsByClassName('c-select')[0];
         select.classList.remove('active')
     }
-    componentDidMount() {
+    // componentDidMount() {
 
-        if (window.activateFlipdown) {
-            window.activateFlipdown()
-        }
-        fetch('https://192.168.88.253:8000/api',{
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Accept': 'application/json'
-            },
-            method: 'post',
-            // body: users 
-        }).then(resp => {
-            return resp.json()
-        }).then(data => {
-            console.log(data)
-            console.log(data.cities.map(city =>  city.name))
-            // console.log(cat)
-                this.setState({
-                    categories: data.categories,
-                    city:data.cities.map(inner =>  { return inner}),
-                    allAds: data.ads.data
-                    // img: data.map(inner => { return inner.image_path })
-                })
-                console.log(this.state.allAds)
-        })
-    }
+    //     if (window.activateFlipdown) {
+    //         window.activateFlipdown()
+    //     }
+    //     fetch('https://192.168.88.253:8000/api',{
+    //         headers: {
+    //             'Content-Type': 'application/x-www-form-urlencoded',
+    //             'Accept': 'application/json'
+    //         },
+    //         method: 'post',
+    //         // body: users 
+    //     }).then(resp => {
+    //         return resp.json()
+    //     }).then(data => {
+    //         console.log(data)
+    //         console.log(data.cities.map(city =>  city.name))
+    //         // console.log(cat)
+    //             this.setState({
+    //                 categories: data.categories,
+    //                 city:data.cities.map(inner =>  { return inner}),
+    //                 allAds: data.ads.data
+    //                 // img: data.map(inner => { return inner.image_path })
+    //             })
+    //             console.log(this.state.allAds)
+    //     })
+    // }
   render() {
 
     const city = this.state.city

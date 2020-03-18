@@ -29,64 +29,64 @@ export default class sign extends Component {
             // 'name': e.target.value
         })
     }
-    addData = async (e) => {
-        e.preventDefault();
+    // addData = async (e) => {
+    //     e.preventDefault();
         
-        const user = {
-            name : this.state.name,
-            surname : this.state.surname,
-            email : this.state.email,
-            phone : this.state.phone,
-            password : this.state.password,
-            confirm_password : this.state.confirm_password,
-            btn_state: true
-        }
-        await this.setState({
-            users: user
-        })
-        const users = this.state.users;
-        console.log(users)
+    //     const user = {
+    //         name : this.state.name,
+    //         surname : this.state.surname,
+    //         email : this.state.email,
+    //         phone : this.state.phone,
+    //         password : this.state.password,
+    //         confirm_password : this.state.confirm_password,
+    //         btn_state: true
+    //     }
+    //     await this.setState({
+    //         users: user
+    //     })
+    //     const users = this.state.users;
+    //     console.log(users)
 
-        fetch('https://192.168.88.253:8000/api/register',{
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            method: 'post',
-            body: JSON.stringify(users)
-        }).then(resp => {
-            return resp.json()
-        }).then(async (data) => {
-            console.log(data);
-            console.log(data.errors)
-            // console.log(data.status)
-            const status = data.status;
+    //     fetch('https://192.168.88.253:8000/api/register',{
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         method: 'post',
+    //         body: JSON.stringify(users)
+    //     }).then(resp => {
+    //         return resp.json()
+    //     }).then(async (data) => {
+    //         console.log(data);
+    //         console.log(data.errors)
+    //         // console.log(data.status)
+    //         const status = data.status;
 
-            const { errors, user, token } = data;
+    //         const { errors, user, token } = data;
             
-            await this.setState({
-                    errorMessage: errors ? [ errors ] : [],
-                })
+    //         await this.setState({
+    //                 errorMessage: errors ? [ errors ] : [],
+    //             })
 
-            if (status === 'success') {
-                console.log(status)
-                this.setState({
-                    redirect: '/'
-                })
-                // return <Redirect to={ Home}/>
-                // const  changeBtn =() =>{
+    //         if (status === 'success') {
+    //             console.log(status)
+    //             this.setState({
+    //                 redirect: '/'
+    //             })
+    //             // return <Redirect to={ Home}/>
+    //             // const  changeBtn =() =>{
                     
-                //     this.setState({
-                //         btn_state: false
-                //     })
-                // }
-                // this.setState({
-                //     errorMessage: [data.errors]
-                // })
-            }
+    //             //     this.setState({
+    //             //         btn_state: false
+    //             //     })
+    //             // }
+    //             // this.setState({
+    //             //     errorMessage: [data.errors]
+    //             // })
+    //         }
             
-            // console.log(typeof this.state.errorMessage)
-        })
-    }
+    //         // console.log(typeof this.state.errorMessage)
+    //     })
+    // }
     render() {
         if (this.state.redirect) {
             return (<Redirect to={this.state.redirect} />)
