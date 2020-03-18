@@ -52,7 +52,7 @@ class App extends React.Component {
         if (window.activateFlipdown) {
             window.activateFlipdown()
         }
-        fetch('http://192.168.88.253:8000/api',{
+        fetch('https://192.168.88.253:8000/api',{
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Accept': 'application/json'

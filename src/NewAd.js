@@ -36,7 +36,7 @@ export default class Sign extends Component {
         ajax.addEventListener("load", this.completeHandler, false);
         ajax.addEventListener("error", this.errorHandler, false);
         ajax.addEventListener("abort", this.abortHandler, false);
-        ajax.open("POST", "http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP"); // 
+        ajax.open("POST", "https://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP"); // 
         //use file_upload_parser.php from above url
         ajax.send(formdata);
       }
@@ -55,7 +55,7 @@ export default class Sign extends Component {
       
 
       componentDidMount() {
-        fetch('http://192.168.88.253:8000/api/elanlar/newad',{
+        fetch('https://192.168.88.253:8000/api/elanlar/newad',{
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Accept': 'application/json'

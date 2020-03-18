@@ -47,7 +47,7 @@ export default class sign extends Component {
         const users = this.state.users;
         console.log(users)
 
-        fetch('http://192.168.88.253:8000/api/register',{
+        fetch('https://192.168.88.253:8000/api/register',{
             headers: {
                 'Content-Type': 'application/json',
             },

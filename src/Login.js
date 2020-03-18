@@ -31,7 +31,7 @@ addData = async (e) => {
     const users = this.state.users;
     console.log(users)
 
-    fetch('http://192.168.88.253:8000/api/login',{
+    fetch('https://192.168.88.253:8000/api/login',{
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
             'Accept': 'application/json'
