@@ -55,7 +55,7 @@ export default class Sign extends Component {
       
 
       componentDidMount() {
-        fetch('https://192.168.88.253:8080/api/elanlar/newad',{
+        fetch('https://dooaz.herokuapp.com/api/elanlar/newad',{
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Accept': 'application/json'
